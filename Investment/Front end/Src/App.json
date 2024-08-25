@@ -1,0 +1,39 @@
+{
+  "app": {
+    "name": "Investment Platform",
+    "version": "1.0.0",
+    "description": "A professional platform for managing and investing money.",
+    "env": {
+      "development": {
+        "apiBaseUrl": "http://localhost:3000/api",
+        "logLevel": "debug"
+      },
+      "production": {
+        "apiBaseUrl": "https://api.investmentplatform.com",
+        "logLevel": "error"
+      }
+    },
+    "features": {
+      "userRegistration": true,
+      "emailVerification": true,
+      "investmentTracking": true,
+      "adminDashboard": true,
+      "reportGeneration": false
+    },
+    "services": {
+      "paymentGateway": "DPO",
+      "smsProvider": "Twilio",
+      "emailProvider": "SendGrid"
+    },
+    "security": {
+      "passwordPolicy": {
+        "minLength": 8,
+        "requireUppercase": true,
+        "requireNumber": true,
+        "requireSpecialCharacter": true
+      },
+      "jwtSecret": "your_jwt_secret_key_here",
+      "tokenExpiry": "1h"
+    }
+  }
+}
